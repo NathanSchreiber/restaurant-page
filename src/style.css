@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+:root {
+    --semi-bold-font: 'Oswald', sans-serif;
+    --main-font: 'Poppins', sans-serif;
+    --body-font: 'Roboto Condensed', sans-serif;
+    --review-bg-color: linear-gradient(#ffffffa9, #ffffffa9);
+    --review-text-color: #f2f2f2;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0c0e14;
+    min-height: 100vh;
+}
+
+div#content {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: var(--main-font);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 2fr 2rem 1fr 1fr;
+}
+
+div.hero-image {
+    background-image: linear-gradient(#ffffffe4, #ffffffe4), url('./img/restaurant-img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    grid-row: 1;
+    grid-column: 1 / -1;
+}
+
+div.nav {
+    display: flex;
+    justify-content: center;
+}
+
+ul.nav {
+    display: flex;
+    list-style: none;
+    margin-top: 0px;
+    padding-top: 5px;
+    color: white;
+    font-size: 1.25rem;
+    background-color: #1b212f;
+    width: 100%;
+    justify-content: center;
+}
+
+ul.nav > li {
+    font-family: var(--semi-bold-font);
+    display: flex;
+    padding: 2px 1rem 5px 1rem;
+    margin: auto 4rem 5px 4rem;
+    cursor: pointer;
+    transition-duration: 500ms;
+    transition-property: padding;
+    font-size: 2rem;
+}
+
+ul.nav > li:hover {
+    border-bottom: 3px solid white;
+    margin-bottom: 2px;
+    transition-duration: 200ms;
+    transition-property: border;
+}
+
+div.title {
+    font-family: "Pacifico";
+    text-align: center;
+    color: #514401;
+    font-size: 2rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+div.description {
+    display: flex;
+    justify-content: center;
+}
+
+p.description {
+    font-family: cursive;
+    font-weight: 600;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 0;
+    margin-top: 0;
+    max-width: 60%;
+    text-align: center;
+    color: #514401;
+}
+
+div.contact {
+    grid-row: 2;
+}
+
+div.review-header {
+    color: white;
+    margin: 1rem auto 1rem auto;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+div.reviews {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5rem;
+    border: 2px solid #cbcbcb; 
+    z-index: 1;
+    background-image: linear-gradient(#00000060, #00000060), url('./img/chef-img.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.review-1 {
+    color: #f2f2f2;
+    border-radius: 15px;
+    align-self: flex-start;
+    width: 300px;
+    padding: 1rem;
+    font-family: var(--body-font);
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    background:linear-gradient(#00000080, #00000080), url('./img/spicy-seafood-img.jpg');
+    background-size: 100%;
+    background-position: center;
+}
+
+div.review-2 {
+    margin-bottom: 10px;
+    color: var(--review-text-color);
+    border-radius: 15px;
+    width: 300px;
+    padding: 1rem;
+    font-family: var(--body-font);
+    align-self: flex-end;
+    max-width: 300px;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    margin-bottom: 1.5rem;
+    margin-right: 3rem;
+    background:linear-gradient(#00000080, #00000080), url('./img/tomato-sauce-img.jpg');
+    background-size: 100%;
+    background-position: right 0 bottom -4rem;
+}
+
+div.review-3 {
+    color: var(--review-text-color);
+    width: 300px;
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    background:linear-gradient(#00000080, #00000080), url('./img/alfredo-img.jpg');
+    background-size: 100%;
+}
+
+@media only screen and (max-width: 700px){
+    div.review-1 {
+        align-self: center;
+        margin-left: 0;
+    }
+    div.review-2 {
+        align-self: center;
+        margin-right: 0;
+    }
+    div.review-3 {
+        align-self: center;
+        margin-left: 0;
+    }
+}
