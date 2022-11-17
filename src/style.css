@@ -30,6 +30,7 @@ div#content {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 2fr 2rem 1fr 1fr;
+    color: white;
 }
 
 div.hero-image {
@@ -179,6 +180,21 @@ div.review-3 {
     margin-bottom: 1.5rem;
     background:linear-gradient(#00000080, #00000080), url('./img/alfredo-img.jpg');
     background-size: 100%;
+}
+
+div.menu {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5rem;
+    border: 2px solid #cbcbcb; 
+    z-index: 1;
+    background-image: linear-gradient(#e4e4e4b3, #b6b6b6d8);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media only screen and (max-width: 700px){
