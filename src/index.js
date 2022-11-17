@@ -1,26 +1,75 @@
 const content = document.getElementById('content');
 
 // Renders home page on page load
-window.onload = homeContents();
+window.onload = pageContents(), homeContents();
 
 const menuButton = document.querySelector('.menu');
-const reviewSection = document.querySelector('.reviews');
+const homeButton = document.querySelector('.home');
+const contactButton = document.querySelector('.contact');
 
+
+// Removes home/contact contents when menu is clicked and adds menu contents
 menuButton.addEventListener('click', (e) => {
-    reviewSection.remove();
+    const reviewSection = document.querySelector('.reviews');
+    const menuSection = document.querySelector('div.menu');
+    const contactSection = document.querySelector('div.contact');
+    if (reviewSection) {
+        reviewSection.remove();
+    }
+    if (contactSection) {
+        contactSection.remove();
+    }
+    if (menuSection) {
+        menuSection.remove();
+    }
+    
+    menuContents();
 });
 
-// Adds content to home page
-function homeContents() {
+// Removes menu/contact contents when home is clicked and adds home contents
+homeButton.addEventListener('click', (e) => {
+    const reviewSection = document.querySelector('.reviews');
+    const menuSection = document.querySelector('div.menu');
+    const contactSection = document.querySelector('div.contact');
+    if (menuSection) {
+        menuSection.remove();
+    }
+    if (contactSection) {
+        contactSection.remove();
+    }
+    if (reviewSection) {
+        reviewSection.remove();
+    }
+
+    homeContents();
+});
+
+// Removes home/menu contents when contact is clicked and adds contact contents
+contactButton.addEventListener('click', (e) => {
+    const reviewSection = document.querySelector('.reviews');
+    const menuSection = document.querySelector('div.menu');
+    const contactSection = document.querySelector('div.contact');
+    if (reviewSection) {
+        reviewSection.remove();
+    }
+    if (menuSection) {
+        menuSection.remove();
+    }
+    if (contactSection) {
+        contactSection.remove();
+    }
+
+    contactContents();
+});
+
+// Adds content to page
+function pageContents() {
     const hero = document.createElement('div');
     hero.classList.add('hero-image')
-    const reviews = document.createElement('div');
-    reviews.classList.add('reviews');
-    content.append(hero, reviews);
+    content.append(hero);
     navContents();
     titleContent();
     descriptionContent();
-    reviewContent();
 
     // Creates nav contents
     function navContents() {
@@ -71,6 +120,14 @@ function homeContents() {
         description.appendChild(textDescription);
         hero.appendChild(description);
     }
+};
+
+//Adds content to home page
+function homeContents() {
+    const reviews = document.createElement('div');
+    reviews.classList.add('reviews');
+    content.appendChild(reviews);
+    reviewContent();
 
     // Creates content of review section
     function reviewContent() {
@@ -100,4 +157,61 @@ function homeContents() {
         reviewTwo.appendChild(textReviewTwo);
         reviewThree.appendChild(textReviewThree);
     };
+};
+
+// Adds content to menu page
+function menuContents() {
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
+    const foodOne = document.createElement('div');
+    foodOne.classList.add('food-1');
+    const foodOneImg = document.createElement('div');
+    foodOneImg.classList.add('food-1-img');
+    const foodOneTitle = document.createElement('p');
+    foodOneTitle.classList.add('food-1-title');
+    foodOneTitle.textContent = "Spicy Seafood - $18";
+    const foodOneDescription = document.createElement('p');
+    foodOneDescription.classList.add('food-1-description');
+    foodOneDescription.textContent = 
+    "Served with sliced tomatoes, clams, and red peppers";
+
+    const foodTwo = document.createElement('div');
+    foodTwo.classList.add('food-2');
+    const foodTwoImg = document.createElement('div');
+    foodTwoImg.classList.add('food-2-img');
+    const foodTwoTitle = document.createElement('p');
+    foodTwoTitle.classList.add('food-2-title');
+    foodTwoTitle.textContent = 
+    "Fettuccine Alfredo - $21";
+    const foodTwoDescription = document.createElement('p')
+    foodTwoDescription.classList.add('food-2-description');
+    foodTwoDescription.textContent = "Served with ham and assorted greens";
+
+    const foodThree = document.createElement('div');
+    foodThree.classList.add('food-3');
+    const foodThreeImg = document.createElement('div');
+    foodThreeImg.classList.add('food-3-img');
+    const foodThreeTitle = document.createElement('p');
+    foodThreeTitle.classList.add('food-3-title');
+    foodThreeTitle.textContent = "Spaghetti - $17";
+    const foodThreeDescription = document.createElement('p');
+    foodThreeDescription.classList.add('food-3-description');
+    foodThreeDescription.textContent = 
+    "Served with sliced tomatoes, and your choice of greens";
+
+
+    foodOne.append(foodOneImg, foodOneTitle, foodOneDescription);
+    foodTwo.append(foodTwoImg, foodTwoTitle, foodTwoDescription);
+    foodThree.append(foodThreeImg, foodThreeTitle, foodThreeDescription);
+    menu.append(foodOne, foodTwo, foodThree);
+    content.appendChild(menu);
+};
+
+// Adds content to contact page
+function contactContents() {
+    const contact = document.createElement('div');
+    contact.classList.add('contact');
+
+    content.appendChild(contact);
 };

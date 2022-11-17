@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 
 :root {
     --semi-bold-font: 'Oswald', sans-serif;
@@ -9,6 +10,7 @@
     --body-font: 'Roboto Condensed', sans-serif;
     --review-bg-color: linear-gradient(#ffffffa9, #ffffffa9);
     --review-text-color: #f2f2f2;
+    --menu-titles: 'Roboto Slab', serif;
 }
 
 html {
@@ -29,8 +31,9 @@ div#content {
     font-family: var(--main-font);
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 2fr 2rem 1fr 1fr;
+    grid-template-rows: 400px 2rem 1fr;
     color: white;
+    
 }
 
 div.hero-image {
@@ -117,19 +120,21 @@ div.review-header {
     padding: 0;
 }
 
+/* Home page styles */
 div.reviews {
     grid-column: 2 / 3;
-    grid-row: 3 / 5;
+    grid-row: 3 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -5rem;
+    margin-top: -4rem;
     border: 2px solid #cbcbcb; 
     z-index: 1;
     background-image: linear-gradient(#00000060, #00000060), url('./img/chef-img.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    animation: slide-up 1s ease;
 }
 
 div.review-1 {
@@ -182,22 +187,176 @@ div.review-3 {
     background-size: 100%;
 }
 
+/* Menu page styles */
 div.menu {
     grid-column: 2 / 3;
-    grid-row: 3 / 5;
-    display: flex;
-    flex-direction: column;
+    grid-row: 3 / -1;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 15px;
     align-items: center;
-    margin-top: -5rem;
-    border: 2px solid #cbcbcb; 
+    margin-top: -4rem;
+    padding: 1rem;
+    border: 10px double #514401; 
     z-index: 1;
-    background-image: linear-gradient(#e4e4e4b3, #b6b6b6d8);
+    background-color: #efefef;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    animation: slide-up 1s ease;
+}
+
+div.food-1 {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1rem 1fr;
+    justify-items: center;
+
+}
+
+div.food-1-img {
+    background: url('./img/spicy-seafood-img.jpg');
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    border-radius: 5rem;
+}
+
+p.food-1-title {
+    color: black;
+    font-family: var(--menu-titles);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p.food-1-description {
+    color: black;
+    font-family: var(--body-font);
+    font-size: 1.25rem;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+div.food-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 1fr;
+    justify-items: center;
+}
+
+div.food-2-img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    background: url('./img/alfredo-img.jpg');
+    width: 150px;
+    height: 150px;
+    background-size: 165%;
+    background-position: center 90%;
+    background-repeat: no-repeat;
+    border-radius: 5rem;
+}
+
+p.food-2-title {
+    color: black;
+    font-family: var(--menu-titles);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p.food-2-description {
+    color: black;
+    font-family: var(--body-font);
+    font-size: 1.25rem;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+div.food-3 {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+div.food-3-img {
+    background: url('./img/tomato-sauce-img.jpg');
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: 45% 85%;
+    background-repeat: no-repeat;
+    border-radius: 5rem;
+}
+
+p.food-3-title {
+    color: black;
+    font-family: var(--menu-titles);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p.food-3-description {
+    color: black;
+    font-family: var(--body-font);
+    font-size: 1.25rem;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 25px;
+}
+
+/* Contact page styles */
+div.contact {
+    grid-column: 2 / 3;
+    grid-row: 3 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -4rem;
+    border: 2px solid #cbcbcb; 
+    z-index: 1;
+    background-color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: slide-up 1s ease;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(350px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media only screen and (max-width: 700px){
+    div.reviews {
+        margin-top: -3rem;
+    }
     div.review-1 {
         align-self: center;
         margin-left: 0;
@@ -209,5 +368,11 @@ div.menu {
     div.review-3 {
         align-self: center;
         margin-left: 0;
+    }
+    div.menu {
+        margin-top: -3rem;
+    }
+    div.contact {
+        margin-top: -3rem;
     }
 }
