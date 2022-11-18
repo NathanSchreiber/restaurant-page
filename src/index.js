@@ -1,7 +1,7 @@
 const content = document.getElementById('content');
 
 // Renders home page on page load
-window.onload = pageContents(), contactContents();
+window.onload = pageContents(), homeContents();
 
 const menuButton = document.querySelector('.menu');
 const homeButton = document.querySelector('.home');
