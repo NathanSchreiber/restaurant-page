@@ -128,10 +128,10 @@ div.reviews {
     flex-direction: column;
     align-items: center;
     margin-top: -4rem;
-    border: 2px solid #cbcbcb; 
+    border: 10px ridge #1f1f1f;
     z-index: 1;
     background-image: linear-gradient(#00000060, #00000060), url('./img/chef-img.jpg');
-    background-size: 100%;
+    background-size: 105%;
     background-repeat: no-repeat;
     background-position: center;
     animation: slide-up 1s ease;
@@ -329,19 +329,62 @@ p.food-3-description {
 
 /* Contact page styles */
 div.contact {
+    color: black;
     grid-column: 2 / 3;
     grid-row: 3 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-column: 1fr;
+    grid-template-rows: 3rem 1fr 2fr;
     margin-top: -4rem;
-    border: 2px solid #cbcbcb; 
+    border: 10px double #514401; 
     z-index: 1;
-    background-color: white;
+    background-color: #efefef;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     animation: slide-up 1s ease;
+    font-family: var(--body-font);
+}
+
+p.contact-header {
+    grid-row: 1;
+    text-align: center;
+    font-family: var(--menu-titles);
+    font-size: 1.25rem;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+
+}
+
+div.contact-methods {
+    grid-row: 2;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+p.street {
+    margin-bottom: 0;
+}
+
+p.city-state {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+p.phoneNumber {
+    margin-bottom: 20px;
+}
+
+div.hours {
+    grid-row: 3;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+p.hours-header {
+    font-family: var(--menu-titles);
+    font-size: 1.25rem;
 }
 
 @keyframes slide-up {
@@ -374,5 +417,23 @@ div.contact {
     }
     div.contact {
         margin-top: -3rem;
+    }
+}
+
+@media only screen and (min-width: 700px){
+    p.contact-header {
+        font-size: 2rem;
+    }
+
+    div.contact-methods {
+        font-size: 1.5rem;
+    }
+
+    div.hours {
+        font-size: 1.5rem;
+    }
+
+    p.hours-header {
+        font-size: 2rem;
     }
 }

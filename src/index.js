@@ -1,7 +1,7 @@
 const content = document.getElementById('content');
 
 // Renders home page on page load
-window.onload = pageContents(), homeContents();
+window.onload = pageContents(), contactContents();
 
 const menuButton = document.querySelector('.menu');
 const homeButton = document.querySelector('.home');
@@ -213,5 +213,72 @@ function contactContents() {
     const contact = document.createElement('div');
     contact.classList.add('contact');
 
+    const contactHeader = document.createElement('p');
+    contactHeader.classList.add('contact-header');
+    contactHeader.textContent = "Contact Us!";
+
+    const contactMethods = document.createElement('div');
+    contactMethods.classList.add('contact-methods');
+
+    const address = document.createElement('div');
+    address.classList.add('address');
+
+    const street = document.createElement('p');
+    street.classList.add('street');
+    street.textContent = "123 Main Street";
+
+    const cityState = document.createElement('p');
+    cityState.classList.add('city-state');
+    cityState.textContent = "Parma, OH 44134";
+
+    const phoneNumber = document.createElement('p');
+    phoneNumber.classList.add('phone-number');
+    phoneNumber.textContent = "555-555-5555";
+
+    const email = document.createElement('p');
+    email.classList.add('email');
+    email.textContent = "BennysCasualItaly@example.com";
+
+    const hours = document.createElement('div');
+    hours.classList.add('hours');
+
+    const hoursHeader = document.createElement('p');
+    hoursHeader.classList.add('hours-header');
+    hoursHeader.textContent = "Hours";
+
+    const monday = document.createElement('p');
+    monday.classList.add('monday');
+    monday.textContent = "Monday: 1pm - 10pm";
+
+    const tuesday = document.createElement('p');
+    tuesday.classList.add('tuesday');
+    tuesday.textContent = "Tuesday: 1pm - 10pm";
+
+    const wednesday = document.createElement('p');
+    wednesday.classList.add('wednesday');
+    wednesday.textContent = "Wednesday: 1pm - 10pm";
+
+    const thursday = document.createElement('p');
+    thursday.classList.add('thursday');
+    thursday.textContent = "Thursday: 1pm - 10pm";
+
+    const friday = document.createElement('p');
+    friday.classList.add('friday');
+    friday.textContent = "Friday: 1pm - 11pm";
+
+    const saturday = document.createElement('p');
+    saturday.classList.add('saturday');
+    saturday.textContent = "Saturday: 1pm - 11pm";
+
+    const sunday = document.createElement('p');
+    sunday.classList.add('sunday');
+    sunday.textContent = "Sunday: 1pm - 9pm";
+
+
+
+    hours.append(hoursHeader, monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+    address.append(street, cityState);
+    contactMethods.append(address, phoneNumber, email);
+    contact.append(contactHeader, contactMethods, hours);
     content.appendChild(contact);
 };
